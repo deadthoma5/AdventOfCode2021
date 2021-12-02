@@ -1,0 +1,15 @@
+/Users/tom/Projects/AdventOfCode2021/02/bin/Debug/net6.0/02
+/Users/tom/Projects/AdventOfCode2021/02/bin/Debug/net6.0/02.deps.json
+/Users/tom/Projects/AdventOfCode2021/02/bin/Debug/net6.0/02.runtimeconfig.json
+/Users/tom/Projects/AdventOfCode2021/02/bin/Debug/net6.0/02.dll
+/Users/tom/Projects/AdventOfCode2021/02/bin/Debug/net6.0/ref/02.dll
+/Users/tom/Projects/AdventOfCode2021/02/bin/Debug/net6.0/02.pdb
+/Users/tom/Projects/AdventOfCode2021/02/obj/Debug/net6.0/02.csproj.AssemblyReference.cache
+/Users/tom/Projects/AdventOfCode2021/02/obj/Debug/net6.0/02.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tom/Projects/AdventOfCode2021/02/obj/Debug/net6.0/02.AssemblyInfoInputs.cache
+/Users/tom/Projects/AdventOfCode2021/02/obj/Debug/net6.0/02.AssemblyInfo.cs
+/Users/tom/Projects/AdventOfCode2021/02/obj/Debug/net6.0/02.csproj.CoreCompileInputs.cache
+/Users/tom/Projects/AdventOfCode2021/02/obj/Debug/net6.0/02.dll
+/Users/tom/Projects/AdventOfCode2021/02/obj/Debug/net6.0/ref/02.dll
+/Users/tom/Projects/AdventOfCode2021/02/obj/Debug/net6.0/02.pdb
+/Users/tom/Projects/AdventOfCode2021/02/obj/Debug/net6.0/02.genruntimeconfig.cache
