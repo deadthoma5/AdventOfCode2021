@@ -136,7 +136,7 @@ namespace Day11
                 if (Globals.debug)
                 {
                     Console.WriteLine($"After step {i}:");
-                    if (i == 195) ShowGrid(grid);
+                    ShowGrid(grid);
                 }
             }
  
