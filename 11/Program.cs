@@ -68,6 +68,7 @@ namespace Day11
                 }
             }
             
+            // Recursion base case: exit when there's no more queued flashpoints
             if (flashqueue.Count == 0)
             {
                 foreach (Point p in flashed)
@@ -95,7 +96,7 @@ namespace Day11
             return Flash(grid, flashed);
         }
 
-        // Increment the value of each point in the grid
+        // Increment the value of each point in the grid and trigger flashes
         static public int Step(int[,] grid)
         {
             for (int y = 0; y < grid.GetLength(1); y++)
