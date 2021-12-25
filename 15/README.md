@@ -100,7 +100,8 @@ Here is the full five-times-as-large version of the first example above, with th
     75698651748671976285978218739618932984172914319528
     56475739656758684176786979528789718163989182927419
     67554889357866599146897761125791887223681299833479
-    Equipped with the full map, you can now find a path from the top left corner to the bottom right corner with the lowest total risk:
+
+Equipped with the full map, you can now find a path from the top left corner to the bottom right corner with the lowest total risk:
 
     11637517422274862853338597396444961841755517295286
     13813736722492484783351359589446246169155735727126
