@@ -9,25 +9,25 @@ namespace Day16
 {
     class Program
     {
-        public static int sumVersions = 0;
+        public static long sumVersions = 0;
         // Convert hexadecimal string to binary string
         static private string hex2bin(string hexString)
         {
             string binaryString = String.Join(String.Empty,
                 hexString.Select(
-                    c => Convert.ToString(Convert.ToInt32(c.ToString(), 16), 2).PadLeft(4, '0')
+                    c => Convert.ToString(Convert.ToInt64(c.ToString(), 16), 2).PadLeft(4, '0')
                 )
             );
             return binaryString;
         }
 
         // Convert binary string to decimal number
-        static private int bin2dec(string binaryString)
+        static private long bin2dec(string binaryString)
         {
-            return Convert.ToInt32(binaryString, 2);
+            return Convert.ToInt64(binaryString, 2);
         }
 
-        static private string parse(string input)
+        static private (string, long) parse(string input)
         {
             var version = bin2dec(input.Substring(0, 3));
             sumVersions += version;
@@ -69,16 +69,18 @@ namespace Day16
                         break;
                     }
                 }
+                return (input, bin2dec(value));
             }
             else
             {
                 var lengthTypeID = input.Substring(0, 1);
+                var subpacketsValues = new List<Int64>();
                 if (Globals.debug)
                     Console.WriteLine($"lengthTypeID: {lengthTypeID}");
                 input = input.Substring(1);
                 if (lengthTypeID == "0")
                 {
-                    var lengthSubpackets = bin2dec(input.Substring(0, 15));
+                    var lengthSubpackets = Convert.ToInt32(bin2dec(input.Substring(0, 15)));
                     input = input.Substring(15);
                     var subpackets = input.Substring(0,lengthSubpackets);
                     if (Globals.debug)
@@ -89,23 +91,54 @@ namespace Day16
                     }
                     while (subpackets.Length > 0)
                     {
-                        subpackets = parse(subpackets);
+                        (var s, var v) = parse(subpackets);
+                        subpackets = s;
+                        subpacketsValues.Add(v);
                     }
                     input = input.Substring(lengthSubpackets);
                 }
                 else
                 {
-                    var numberSubpackets = bin2dec(input.Substring(0, 11));
+                    var numberSubpackets = Convert.ToInt32(bin2dec(input.Substring(0, 11)));
                     if (Globals.debug)
                         Console.WriteLine($"numberSubpackets: {numberSubpackets}");
                     input = input.Substring(11);
                     foreach (int i in Enumerable.Range(1, numberSubpackets))
                     {
-                        input = parse(input);
+                        (var s, var v) = parse(input);
+                        input = s;
+                        subpacketsValues.Add(v);
                     }
                 }
+                switch (typeID)
+                {
+                    case 0:
+                        return (input, subpacketsValues.Sum());
+                    case 1:
+                        return (input, subpacketsValues.Aggregate((total, next) => total * next));
+                    case 2:
+                        return (input, subpacketsValues.Min());
+                    case 3:
+                        return (input, subpacketsValues.Max());
+                    case 5:
+                        if (subpacketsValues[0] > subpacketsValues[1])
+                            return (input, 1);
+                        else
+                            return (input, 0);
+                    case 6:
+                        if (subpacketsValues[0] < subpacketsValues[1])
+                            return (input, 1);
+                        else
+                            return (input, 0);
+                    case 7:
+                        if (subpacketsValues[0] == subpacketsValues[1])
+                            return (input, 1);
+                        else
+                            return (input, 0);
+                }
             }
-            return input;
+            Console.WriteLine("We're not supposed to be here. Something bad happened.");
+            return (String.Empty, 0);
         }
 
         // Main program entry point
@@ -129,7 +162,8 @@ namespace Day16
                 Console.WriteLine($"Input as bin: {line}");
             
             // Parse input
-            parse(line);
+            (var a, var b) = parse(line);
+            //(var a, var b) = parse(hex2bin("9C0141080250320F1802104A08"));
 
             // Part 1: Initialize variables
             var part1 = sumVersions;
@@ -138,7 +172,7 @@ namespace Day16
             Console.WriteLine($"Part 1: {part1}");
 
             // Part 2: Initialize variables
-            var part2 = 0;
+            var part2 = b;
 
             // Part 2: Display results         
             Console.WriteLine($"Part 2: {part2}");
