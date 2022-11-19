@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "MdvhzAmUiNskvwF9fgF9iX3R9A2hJL4H7zhDta69hc2i2DyZNODAIbzaiIRpNTUWpnyqa5aRbfXKP4OMzB/LpA==",
+  "dgSpecHash": "bwj4b5RNQS+WW1IWYYVnuJT5NvDFOZ0i8UxR6d0aYsW09oUT3y/JwyQaVJlYG9JFNOS4YHABUtUX1rSQag7ofA==",
   "success": true,
   "projectFilePath": "/Users/tom/Projects/AdventOfCode2021/15/15.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/tom/.nuget/packages/microsoft.netcore.app.ref/6.0.11/microsoft.netcore.app.ref.6.0.11.nupkg.sha512",
+    "/Users/tom/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.11/microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512",
+    "/Users/tom/.nuget/packages/microsoft.netcore.app.host.osx-arm64/6.0.11/microsoft.netcore.app.host.osx-arm64.6.0.11.nupkg.sha512"
+  ],
   "logs": []
 }
