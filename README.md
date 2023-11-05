@@ -1,5 +1,5 @@
 # AdventOfCode2021
-Advent of Code 2021 coding challenges: https://adventofcode.com
+Advent of Code 2021 coding challenges: https://adventofcode.com/2021
 
 Command for creating a new daily project:
 
